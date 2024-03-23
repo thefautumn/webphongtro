@@ -1,10 +1,8 @@
 class PayloadFactory {
-    createPayload(phone, password) {
-      return {
-        phone,
-        password,
-      };
-    }
-  }
+  createPayload(phone, password) {
   
-  export default PayloadFactory;
+  }
+}
+
+
+export default PayloadFactory;
