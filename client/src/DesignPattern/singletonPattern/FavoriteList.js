@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Item from "../../components/item";
+import Item from "../../components/Item";
 
 // Singleton FavoriteList module
 const FavoriteListSingleton = (() => {

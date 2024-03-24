@@ -4,7 +4,7 @@ import Pagination from "../../containers/public/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 import React, { createContext, useEffect } from "react";
-import Qc from "../../containers/public/Qc";
+import Advertiesment from "../../containers/public/Advertiesment";
 import Footer from "../../containers/public/Footer";
 import { ComplexNavbar } from "../../containers/public/Header";
 import { useState, useContext } from "react";
@@ -65,7 +65,7 @@ const SearchDetail = () => {
               </div>         */}
             <List />
             <Pagination page={params.get("page")} />
-            <Qc />
+            <Advertiesment />
             <div>
               <Footer />
             </div>

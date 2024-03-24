@@ -14,7 +14,6 @@ const SystemInputReadOnly = ({ label, value, direction, editPhone }) => {
                 />
 
             </div>
-            {/* <div className='flex'>{editPhone && <small className='text-blue-500 py-4 cursor-pointer'>Đổi số điện thoại</small>}</div> */}
         </div>
     )
 }

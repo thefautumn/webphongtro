@@ -1,6 +1,6 @@
 import React from "react";
 
-const Qc = () => {
+const Advertiesment= () => {
     return (
         <div class="rounded-lg border-b-2 bg-neutral-600 text-center text-neutral-600 dark:bg-gray-600 dark:text-neutral-200 lg:text-left">
             <div class="text-center mr-1 ml-1 mt-3">
@@ -58,4 +58,4 @@ const Qc = () => {
     )
 }
 
-export default Qc
+export default Advertiesment

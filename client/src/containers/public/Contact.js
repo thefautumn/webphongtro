@@ -11,7 +11,7 @@ import * as actions from '../../store/actions'
 
 
 
-const LienHe = () => {
+const Contact = () => {
   const dispatch = useDispatch()
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -36,13 +36,10 @@ const LienHe = () => {
               <ComplexNavbar />
             </div>
           </div>
-              </div>
+        </div>
 
     <div className='bg-[white] max-w-screen-3xl m-auto h-auto '>
-
-
       <div class="border-t-4 border-gray-400"></div>
-
       <h1 className='pl-[30px] font-semibold text-3xl pb-[20px] '>Liên Hệ với chúng tôi</h1>
       <div className='w-full flex justity-between pl-[50px] pr-[50px] '>
         <Outlet />
@@ -70,8 +67,8 @@ const LienHe = () => {
               text='Gửi'
               textColor='text-white'
               bgColor='bg-[black]'
-              width={'w-[100px]'}
-            /></div>
+              width={'w-[100px]'}/>
+          </div>
         </div>
       </div>
 
@@ -81,4 +78,4 @@ const LienHe = () => {
     </>
   )
 }
-export default LienHe;
+export default Contact;

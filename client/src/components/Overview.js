@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Select, InputReadOnly, InputFormV2 } from '../components'
+import { Select, InputReadOnly, InputFormV2 } from '.'
 import { useDispatch, useSelector } from 'react-redux'
 import {Address} from '../components/Address'
 import * as actions from '../store/actions'
@@ -17,8 +17,8 @@ const Overview = ({ payload, setPayload }) => {
         <div>
             <h2 className='font-semibold text-xl py-4'>Thông tin bài đăng</h2>
             <div className='flex flex-col gap-4'>
-            <div className=' w-1/2 '>
-                <Select value={payload.categoryCode} setValue={setPayload} name='categoryCode' options={categories} label='Loại chuyên mục' />
+                <div className=' w-1/2 '>
+                    <Select value={payload.categoryCode} setValue={setPayload} name='categoryCode' options={categories} label='Loại chuyên mục' />
                 </div>
                 <InputFormV2 value={payload.title} setValue={setPayload} name='title' label='Tiêu đề' />
                 <div className='font-semibold flex flex-col gap-2'>
