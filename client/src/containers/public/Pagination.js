@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PageNumber } from '../../components';
-import { UseSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import icons from '../../ultils/icons';
-import { FlagIcon } from '@heroicons/react/24/outline';
 import { useSearchParams } from 'react-router-dom'
 
 const {GrLinkNext,GrLinkPrevious} = icons

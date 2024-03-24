@@ -1,4 +1,3 @@
- import { apiGetPenPosts } from "../../services";
 import { Proxy } from "./Proxy";
 
  export default class getPenPostProxy extends Proxy {

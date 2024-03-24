@@ -1,10 +1,8 @@
-import React, { useState, createContext, useContext, useEffect } from "react";
-import logo from "../../assets/logo.png";
+import React, { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import InputForm from "../../components/InputForm";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../store/actions'
-import Swal from 'sweetalert2'
 import {DefaultPayloadFactory} from './DefaultPayloadFactory';
 
 

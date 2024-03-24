@@ -1,13 +1,8 @@
 import React, { memo, useState, useEffect } from 'react'
-import { formatVietnameseToString } from '../ultils/formatVietnameseToString'
-import imageroom from '../assets/room.png';
+
 import { path } from '../ultils/constant';
 import icons from '../ultils/icons'
-import { Link } from 'react-router-dom';
-import {
-  StarIcon
-} from "@heroicons/react/24/solid";
-import ItemRoom from '../assets/room.png';
+
 
 const indexs = [0]
 const { GrStar,BiMap,FaHeart } = icons

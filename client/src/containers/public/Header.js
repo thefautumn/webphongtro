@@ -13,12 +13,8 @@ import {
 } from "@material-tailwind/react";
 import {
   HeartIcon,
-  BellIcon,
   UserCircleIcon,
   ChevronDownIcon,
-  Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
   PowerIcon,
   Bars2Icon,
 } from "@heroicons/react/24/outline";
@@ -34,8 +30,6 @@ import { NavLink } from "react-router-dom";
 import { blobToBase64 } from "../../ultils/Common/tobase64";
 import logo from '../../assets/logo1.png';
 import anonavatar from '../../assets/anonavatar.png';
-import {path} from '../../ultils/constant'
-
 // profile menu component
 const profileMenuItems = [
 

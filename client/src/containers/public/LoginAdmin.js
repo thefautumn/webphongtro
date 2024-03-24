@@ -1,13 +1,10 @@
 
-import React, { useState, createContext, useContext, useEffect } from "react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import React, { useState,  useEffect } from "react";
 import InputForm from "../../components/InputForm";
-
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from '../../store/actions'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
-
 
 const LoginAdmin = () => {
 

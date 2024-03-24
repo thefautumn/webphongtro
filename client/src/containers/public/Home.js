@@ -9,7 +9,6 @@ import Fillter from "../../DesignPattern/ObserverPattern/Fillter";
 import { List } from './index';
 import { useSearchParams } from "react-router-dom";
 import Pagination from "./Pagination";
-
 export const ContextRegiter = createContext();
 export const Context = createContext();
 

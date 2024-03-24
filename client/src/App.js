@@ -4,9 +4,7 @@ import {
 
   Login,
   Profile,
-  Test,
-  LienHe,
-  PayPost,
+
   Details,
   LoginAdmin,
 } from "./containers/public";
@@ -20,7 +18,7 @@ import {
   DepositHistory,
   VnPay,
 } from "./containers/system";
-import React, { useCallback, useState, useEffect } from "react";
+import React, {useEffect } from "react";
 import * as actions from "./store/actions";
 import { useDispatch, useSelector } from "react-redux";
 //npm i react-router-dom --save
@@ -53,17 +51,6 @@ function App() {
   }, []);
 
 
-  // const {categories} = useSelector(state => state.app)
-  // const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //     dispatch(actions.getCategories())
-
-  // }, [actions.getCategories])
-
-  // useEffect(() => {
-  //     console.log("Categories :", categories)
-  // }, [categories])
 
   return (
     <div class="h-screen w-creen">

@@ -1,17 +1,12 @@
-import React, { useCallback,useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import React, {useState, useEffect } from 'react';
 import { Address, Overview, Loading } from '../../components';
-import { path } from '../../ultils/constant'
 import Footer from './Footer'
 import icons from '../../ultils/icons'
 import { getCodes, getCodesArea } from '../../ultils/Common/getCodes'
 import { apiCreatePost } from '../../services'
 import Swal from 'sweetalert2'
 import { apiUploadImages } from '../../services'
-
-import {useDispatch, useSelector } from 'react-redux'
-import * as actions from '../../store/actions'
-import { ComplexNavbar } from './Header';
+import { useSelector } from 'react-redux'
 
 import { Card,
     Typography,

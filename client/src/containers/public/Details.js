@@ -1,22 +1,14 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-
 import { getPostsLimit } from "../../store/actions";
-import { Item } from "../../components";
 import Footer from "./Footer";
 import * as actions from "../../store/actions";
 import anhAvt from "../../assets/anhAvt.jpg";
 import iconZalo from "../../assets/iconZalo1.jpg";
-import { ComplexNavbar } from "./Header";
-import { List } from "./index";
 import { useSearchParams } from "react-router-dom";
 import { ComplexNavbarDetail } from "./HeaderDetail";
-import { Anh } from "../../components";
-import { StarIcon } from "@heroicons/react/24/solid";
-import { apiGetPostsLimit } from "../../services";
 import { Carousel } from "@material-tailwind/react";
-
 export const ContextRegiterDetail = createContext();
 export const ContextLoginDetail = createContext();
 
@@ -113,19 +105,8 @@ const Details = () => {
     </Carousel>
 
               
-            </div>
-            {/* <img class="absolute  bg-red-200 top-[100px] left-[790px] w-80 h-60 object-cover"
-                    src=""
-                />
-                <img class="absolute bg-blue-50 top-[360px] left-[790px] w-80 h-[244px] object-cover"
-                    src="/image.png"
-                />
-                <img class=" absolute  bg-pink-200 top-[100px] left-[1120px] rounded-tl-none rounded-tr-mini rounded-b-none w-[316px] h-60 object-cover"
-                    src="/image-.png"
-                />
-                <img class="absolute bg-black top-[360px] left-[1120px] rounded-t-none rounded-br-mini rounded-bl-none w-[315px] h-[244px] object-cover"
-                    src="/image-.png"
-                /> */}
+       </div>
+           
           </div>
           {/* Tiêu đề */}
           <div className="flex items-center justify-center pl-[100px]">
@@ -331,36 +312,7 @@ const Details = () => {
           </div>
         </div>
 
-        {/* <div class="absolute top-[2265px] left-[50px] w-[1011px] h-[142.81px]">
-                <div class="absolute top-[0px] left-[0px] rounded-3xs bg-whitesmoke w-[1011px] h-[142.81px]" />
-                <div class="absolute top-[17.47px] left-[59.59px] text-dimgray inline-block w-[148.98px] h-[35.96px]">
-                    Ngày đăng
-                </div>
-                <div class="absolute top-[83.22px] left-[49.32px] font-medium inline-block w-[148.98px] h-[35.96px]">
-                    20/09/2023
-
-                </div>
-
-                <div class="absolute top-[17.47px] left-[330.84px] text-dimgray inline-block w-[166.45px] h-[33.91px]">
-                    Ngày hết hạn
-                </div>
-                <div class="absolute top-[85.28px] left-[333.92px] font-medium inline-block w-[145.9px] h-[32.88px]">
-                {posts[0]?.overviews?.expired}
-                </div>
-
-                <div class="absolute top-[17.47px] left-[619.55px] text-dimgray inline-block w-[108.91px] h-[33.91px]">
-                    Loại tin
-                </div>
-                <div class="absolute top-[86.3px] left-[541.46px] font-medium inline-block w-[233.23px] h-[35.96px]">
-                    Tin VIP Kim Cương
-                </div>
-                <div class="absolute top-[17.47px] left-[850.72px] text-dimgray inline-block w-[79.11px] h-[33.91px]">
-                    Mã tin
-                </div>
-                <div class="absolute top-[85.28px] left-[829.14px] font-medium inline-block w-[138.7px] h-[32.88px]">
-                    {posts[0]?.attributes?.hashtag}
-                </div>
-            </div> */}
+      
       </ContextLoginDetail.Provider>
     </ContextRegiterDetail.Provider>
   );

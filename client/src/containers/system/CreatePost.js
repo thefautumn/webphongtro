@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
 import { ButtonEdit, Select } from '../../components';
-import { path } from '../../ultils/constant'
 import { Overview, Address, Loading } from '../../components'
 import { apiUploadImages, apiUpdatePost } from '../../services'
 import icons from '../../ultils/icons'
@@ -9,7 +7,6 @@ import { getCodes, getCodesArea } from '../../ultils/Common/getCodes'
 import { useDispatch, useSelector } from 'react-redux'
 import { apiCreatePost } from '../../services'
 import Swal from 'sweetalert2'
-import validate from '../../ultils/Common/validateFields'
 // import Footer from './Footer'
 import { resetDataEdit } from '../../store/actions';
 import { apiPlusMoney } from '../../services';

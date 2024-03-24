@@ -1,12 +1,10 @@
-import React, {useContext, createContext, useState} from 'react'
+import React, { useState} from 'react'
 import { InputForm, Button } from '../../components'
 import { Outlet } from 'react-router-dom'
-import Header, { ComplexNavbar } from './Header'
-import { useDispatch, useSelector } from 'react-redux'
- 
+import { ComplexNavbar } from './Header'
+import { useDispatch } from 'react-redux'
 import { Context, ContextRegiter } from "./Home";
 
-import * as actions from '../../store/actions'
 
 
 

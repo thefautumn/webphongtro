@@ -2,7 +2,6 @@ import { apiUpdateStatus, apiGetPenPosts } from "../../services";
 import { getPenPosts } from "../../store/actions/post";
 import Swal from "sweetalert2";
 import acceptDecorator from "../DecoratorDP/AcceptDecorator";
-import getPenPostProxy from "../ProxyDP/getPenPostProxy";
 
 
 export default class Reciever{
