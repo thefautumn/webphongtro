@@ -5,7 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { apiUpdateUser } from '../../services'
 import { fileToBase64, blobToBase64 } from "../../ultils/Common/tobase64"
 import { getCurrent } from "../../store/actions"
+<<<<<<< HEAD
 import withInputValidation from "../../DesignPattern/DecoratorDP/SubmitDecorator"
+=======
+import withInputValidation from "../../DesignPattern/decorator/submitDecorator"
+>>>>>>> 829df920e76c66ff2e3529e7ef305b66c4d3b6ba
 import Swal from "sweetalert2"
  
 const EditAccount = () => {
