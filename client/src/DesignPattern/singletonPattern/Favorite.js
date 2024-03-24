@@ -1,12 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
-import Footer from "../public/Footer";
+import Footer from "../../containers/public/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
 import Fillter from "../ObserverPattern/Fillter";
 import { useSearchParams } from "react-router-dom";
 import FavoriteListSingleton from "./FavoriteList";
-import Pagination from "../public/Pagination";
-import { ComplexNavbarDetail } from "../public/favoriteBar";
+import Pagination from "../../containers/public/Pagination";
+import { ComplexNavbarDetail } from "../../containers/public/favoriteBar";
 import imageIntro from "../../assets/intro4.jpg";
 
 export const ContextRegiter = createContext();

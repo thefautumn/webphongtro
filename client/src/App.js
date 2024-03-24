@@ -1,7 +1,7 @@
 import { Routes, Route, Switch, Redirect } from "react-router-dom";
 import {
   Home,
-  Favorite,
+
   Login,
   Profile,
   Test,
@@ -10,6 +10,7 @@ import {
   Details,
   LoginAdmin,
 } from "./containers/public";
+import Favorite from "./DesignPattern/SingletonPattern/Favorite"
 import { path } from "./ultils/constant";
 import {
   CreatePost,

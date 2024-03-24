@@ -1,12 +1,12 @@
 
 import List from "../CompositePattern/List";
-import Pagination from "../public/Pagination";
+import Pagination from "../../containers/public/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom'
 import React, { createContext, useEffect } from "react";
-import Qc from "../public/Qc";
-import Footer from "../public/Footer";
-import { ComplexNavbar } from "../public/Header";
+import Qc from "../../containers/public/Qc";
+import Footer from "../../containers/public/Footer";
+import { ComplexNavbar } from "../../containers/public/Header";
 import { useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
