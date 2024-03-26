@@ -8,7 +8,7 @@ import {
   Details,
   LoginAdmin,
 } from "./containers/public";
-import Favorite from "./DesignPattern/singletonPattern/Favorite"
+import Favorite from "./DesignPattern/SingletonPattern/Favorite"
 import { path } from "./ultils/constant";
 import {
   CreatePost,
