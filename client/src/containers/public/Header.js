@@ -19,7 +19,7 @@ import {
   Bars2Icon,
 } from "@heroicons/react/24/outline";
 
-import LoginForm from "../../DesignPattern/FactoryMethod/LoginForm";
+import LoginForm from "../../DesignPattern/factoryMethod/LoginForm";
 import { Context, ContextRegiter } from "./Home";
 import RegisterForm from "../../components/RegisterForm";
 import { useDispatch, useSelector } from "react-redux";

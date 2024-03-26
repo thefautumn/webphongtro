@@ -8,7 +8,7 @@ import { getCurrent } from '../store/actions'
 import Swal from "sweetalert2"
 import { useLocation } from "react-router-dom"
 import { apiGetOneUser } from "../services"
-import withInputValidation from "../DesignPattern/DecoratorDP/SubmitDecorator"
+import withInputValidation from "../DesignPattern/decoratorDP/SubmitDecorator"
 
 const EditUser = () => {
     const location = useLocation();

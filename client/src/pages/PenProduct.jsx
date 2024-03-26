@@ -1,25 +1,16 @@
 import React from "react";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
-import { getOrderStatus } from "../lib/helpers";
 import { useDispatch, useSelector } from "react-redux";
-import { getPenPosts, getPosts } from "../store/actions/post";
 import { useEffect, useState } from "react";
-import { apiUpdateStatus } from "../services";
-import Swal from "sweetalert2";
-import { CreatePost } from "../containers/public";
-import EditPost from "./EditPost";
-import { path } from "../ultils/constant";
 import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { apiGetPenPosts } from "../services";
 import { apiGetPostByDate } from "../services";
-import rejectCommand from "../DesignPattern/CommandDP/RejectCommand";
-import AcceptCommand from "../DesignPattern/CommandDP/AcceptCommand";
-import RejectCommand from "../DesignPattern/CommandDP/RejectCommand";
-import getPenPostProxy from "../DesignPattern/ProxyDP/getPenPostProxy";
+import AcceptCommand from "../DesignPattern/commandDP/AcceptCommand";
+import RejectCommand from "../DesignPattern/commandDP/RejectCommand";
+import getPenPostProxy from "../DesignPattern/proxyDP/getPenPostProxy";
 export default function PenProduct() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
