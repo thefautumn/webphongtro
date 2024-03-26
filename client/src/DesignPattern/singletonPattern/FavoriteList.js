@@ -1,49 +1,36 @@
-import React, { useEffect, useState } from "react";
-import Item from "../../components/Item";
+import React, { useEffect, useState } from 'react';
+import Item from '../../components/Item';
+import LocalStorageManager from './LocalStorageManager';
 
-// Singleton FavoriteList module
-const FavoriteListSingleton = (() => {
-  let instance;
+const FavoriteList = ({ favorites }) => {
+  const [favoriteRooms, setFavoriteRooms] = useState([]);
 
-  const createInstance = () => {
-    const FavoriteList = ({ favorites }) => {
-      const [favoriteRooms, setFavoriteRooms] = useState([]);
+  useEffect(() => {
+    // Sử dụng danh sách phòng yêu thích được truyền từ props
+    if (favorites.length > 0) {
+      const localStorageManager = LocalStorageManager.getInstance();
+      const rooms = favorites.map((postKey) => {
+        const [title, id] = postKey.split('_');
+        const roomInfo = localStorageManager.getRoomInfo(postKey);
 
-      useEffect(() => {
-        if (favorites.length > 0) {
-          const rooms = favorites.map((postKey) => {
-            const [title, id] = postKey.split("_");
-            const roomInfo = JSON.parse(localStorage.getItem(postKey)) || {};
-            return {
-              id,
-              title,
-              ...roomInfo,
-            };
-          });
-          setFavoriteRooms(rooms);
-        }
-      }, [favorites]);
+        return {
+          id,
+          title,
+          ...roomInfo,
+        };
+      });
 
-      return (
-        <div className="grid grid-cols-1 md:grid md:grid-cols-3 md:px-[5rem]">
-          {favoriteRooms.map((room) => (
-            <Item key={room.id} {...room} />
-          ))}
-        </div>
-      );
-    };
+      setFavoriteRooms(rooms);
+    }
+  }, [favorites]);
 
-    return FavoriteList;
-  };
+  return (
+    <div className='grid grid-cols-1 md:grid md:grid-cols-3 md:px-[5rem]'>
+      {favoriteRooms.map((room) => (
+        <Item key={room.id} {...room} />
+      ))}
+    </div>
+  );
+};
 
-  return {
-    getInstance: () => {
-      if (!instance) {
-        instance = createInstance();
-      }
-      return instance;
-    },
-  };
-})();
-
-export default FavoriteListSingleton;
+export default FavoriteList;

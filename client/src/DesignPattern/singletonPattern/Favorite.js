@@ -4,22 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
 import Fillter from "../ObserverPattern/Fillter";
 import { useSearchParams } from "react-router-dom";
-import FavoriteListSingleton from "./FavoriteList";
+import LocalStorageManager from "./LocalStorageManager";
 import Pagination from "../../containers/public/Pagination";
 import { ComplexNavbarDetail } from "../../containers/public/favoriteBar";
 import imageIntro from "../../assets/intro4.jpg";
+import FavoriteList from "./FavoriteList";
 
 export const ContextRegiter = createContext();
 export const Context = createContext();
 
 const Favorite = () => {
   const [params] = useSearchParams();
-
-  const dispatch = useDispatch();
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
-
+  const dispatch = useDispatch();
   useEffect(() => {
+   
     dispatch(actions.getPrices());
     dispatch(actions.getAreas());
     dispatch(actions.getProvinces());
@@ -32,14 +32,15 @@ const Favorite = () => {
 
   const { categories } = useSelector((state) => state.app);
 
+  
+
   useEffect(() => {
     dispatch(actions.getCategories());
   }, [dispatch]);
 
-  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-  // Lấy instance của FavoriteList từ Singleton
-  const FavoriteListInstance = FavoriteListSingleton.getInstance();
+  // Tạo instance của LocalStorageManager
+  const localStorageManager = LocalStorageManager.getInstance();
+  const favoriteListInstance = localStorageManager.getFavorites();
 
   return (
     <ContextRegiter.Provider value={[isRegisterPopupOpen, setIsRegisterPopupOpen]}>
@@ -59,8 +60,7 @@ const Favorite = () => {
               <Fillter />
             </div>
             <div>
-              {/* Render instance của FavoriteList */}
-              <FavoriteListInstance favorites={favorites} />
+              <FavoriteList favorites={favoriteListInstance} />
               <Pagination />
             </div>
             <div>

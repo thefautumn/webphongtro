@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import { getPostsLimit } from '../../store/actions/post'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import PostList from './PostList' // Đảm bảo đường dẫn và tên tệp là chính xác
-import PostItem from './PostItem' // Đảm bảo đường dẫn và tên tệp là chính xác
+import PostList from './PostList' 
+import PostItem from './PostItem' 
 
 const List = ({ categoryCode }) => {
     const dispatch = useDispatch();
