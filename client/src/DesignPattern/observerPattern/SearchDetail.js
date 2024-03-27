@@ -10,7 +10,7 @@ import { ComplexNavbar } from "../../containers/public/Header";
 import { useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
-import Fillter from "./Fillter";
+import Fillter from "./Filter";
 
 
 export const ContextRegiter = createContext();

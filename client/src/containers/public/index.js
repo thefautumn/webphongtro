@@ -6,7 +6,7 @@ export {default as Contact} from './Contact.js'
 export {default as CreatePost} from './CreatePost'
 export {default as PayPost} from './PayPost'
 export {default as Details} from './Details'
-export {default as Fillter} from '../../DesignPattern/observerPattern/Fillter.js'
+export {default as Fillter} from '../../DesignPattern/observerPattern/Filter.js'
  
 export {default as Pagination} from './Pagination'
 export {default as LoginAdmin} from './LoginAdmin'
