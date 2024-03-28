@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from "react";
 import Footer from "../../containers/public/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
-import Fillter from "../observerPattern/Filter";
+import Fillter from "../ObserverPattern/Filter";
 import { useSearchParams } from "react-router-dom";
 import LocalStorageManager from "./LocalStorageManager";
 import Pagination from "../../containers/public/Pagination";

@@ -170,60 +170,8 @@ const CreatePost = (isEdit) => {
                             textColor='text-white'>
                         </ButtonEdit>
                     </div>
-                    {/* <Card className='flex  py-10 border-solid  '>
-                        <div className='flex justify-center'>
-                            <div className='flex w-3/4 flex-col gap-5' >
-                                <Typography variant="h2">Thông tin liên hệ</Typography>
-                                <div className="flex flex-col">
-                                    <label className=" font-bold" >Tên liên hệ</label>
-                                    <Input
-                                        type="text"
-                                        placeholder="Nhập họ và tên"
-                                        className="!border !border-gray-300 bg-white text-gray-900 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 "
-                                        labelProps={{
-                                            className: "hidden",
-                                        }}
-                                        containerProps={{ className: "min-w-[100px]" }}
-                                    />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className=" font-bold" >Số điện thoại</label>
-                                    <Input
-
-                                        placeholder="Nhập số điện thoại"
-                                        className="!border !border-gray-300 bg-white text-gray-900 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 "
-                                        labelProps={{
-                                            className: "hidden",
-                                        }}
-                                        containerProps={{ className: "min-w-[100px]" }}
-                                    />
-                                </div>
-                                <div className="flex flex-col">
-                                    <label className=" font-bold" >Email</label>
-                                    <Input
-                                        type="email"
-                                        placeholder="Nhập địa chỉ email"
-                                        className="!border !border-gray-300 bg-white text-gray-900 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 "
-                                        labelProps={{
-                                            className: "hidden",
-                                        }}
-                                        containerProps={{ className: "min-w-[100px]" }}
-                                    />
-                                </div>
-                                <div className='flex justify-end'>
-
-                                    <button
-                                        className=' bg-orange-400 hover:bg-orange-600 text-white w-[9em] h-[3em] rounded-[30em] text-[15px] drop-shadow-[6px_6px_10px_#c5c5c5]'
-                                        onClick={() => goPaypost(true)}>
-                                        Tiếp tục
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </Card> */}
                 </div>
-            </div>
-            {/* <Footer /> */}
+            </div> 
         </div>
     )
 }
