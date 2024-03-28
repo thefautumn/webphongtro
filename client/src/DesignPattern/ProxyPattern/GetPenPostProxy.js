@@ -1,6 +1,6 @@
 import { Proxy } from "./Proxy";
 
- export default class getPenPostProxy extends Proxy {
+ export default class GetPenPostProxy extends Proxy {
     constructor(api) {
       super();
       this.api = api;

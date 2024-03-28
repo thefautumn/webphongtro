@@ -7,7 +7,6 @@ export {default as CreatePost} from './CreatePost'
 export {default as PayPost} from './PayPost'
 export {default as Details} from './Details'
 export {default as Fillter} from '../../DesignPattern/ObserverPattern/Filter.js'
- 
 export {default as Pagination} from './Pagination'
 export {default as LoginAdmin} from './LoginAdmin'
 export {default as SearchDetail} from '../../DesignPattern/ObserverPattern/SearchDetail.js'

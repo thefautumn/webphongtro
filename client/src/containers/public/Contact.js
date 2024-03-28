@@ -5,10 +5,6 @@ import { ComplexNavbar } from './Header'
 import { useDispatch } from 'react-redux'
 import { Context, ContextRegiter } from "./Home";
 
-
-
-
-
 const Contact = () => {
   const dispatch = useDispatch()
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
