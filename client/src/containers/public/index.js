@@ -12,6 +12,7 @@ export {default as Pagination} from './Pagination'
 export {default as LoginAdmin} from './LoginAdmin'
 export {default as SearchDetail} from '../../DesignPattern/ObserverPattern/SearchDetail.js'
 export {default as HeaderDetail} from './HeaderDetail'
+export {default as FavoriteList} from '../../DesignPattern/SingletonPattern/FavoriteList.js'
 export {default as Favorite} from '../../DesignPattern/SingletonPattern/Favorite'
-export {default as FavoriteList} from '../../DesignPattern/SingletonPattern/FavoriteList'
+ 
  
