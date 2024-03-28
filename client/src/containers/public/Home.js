@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as actions from "../../store/actions";
 import Fillter from "../../DesignPattern/observerPattern/Filter";
-import  List  from '../../DesignPattern/compositePattern/List';
+import  List  from '../../DesignPattern/CompositePattern/List';
 import { useSearchParams } from "react-router-dom";
 import Pagination from "./Pagination";
 export const ContextRegiter = createContext();

@@ -7,6 +7,7 @@ import { getCodes, getCodesArea } from '../../ultils/Common/getCodes'
 import { useDispatch, useSelector } from 'react-redux'
 import { apiCreatePost } from '../../services'
 import Swal from 'sweetalert2'
+import PayloadBuilder from './PayloadBuilder';
 // import Footer from './Footer'
 import { resetDataEdit } from '../../store/actions';
 import { apiPlusMoney } from '../../services';
@@ -22,130 +23,65 @@ import {
 import { CameraIcon } from "@heroicons/react/24/outline"
 
 const { ImBin } = icons
-const CreatePost = ({ isEdit }) => {
-    const dispatch = useDispatch()
-    const { dataEdit } = useSelector(state => state.post)
-    const [payload, setPayload] = useState(() => {
-        const initData = {
-            categoryCode: dataEdit?.categoryCode || '',
-            title: dataEdit?.title || '',
-            priceNumber: dataEdit?.priceNumber * 100000 || 0,
-            areaNumber: dataEdit?.areaNumber || 0,
-            images: dataEdit?.images?.image ? JSON.parse(dataEdit?.images?.image) : '',
-            address: dataEdit?.address || '',
-            priceCode: dataEdit?.priceCode || '',
-            areaCode: dataEdit?.areaCode || '',
-            description: dataEdit?.description ? JSON.parse(dataEdit?.description) : '',
-            province: dataEdit?.province || ''
-        }
-        return initData
-    })
-    const [imagesPreview, setImagesPreview] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    const { prices, areas, categories, province } = useSelector(state => state.app)
-    const { currentData } = useSelector(state => state.user)
+const CreatePost = (isEdit) => {
+    const [payload, setPayload] = useState(new PayloadBuilder().build());
+    const [imagesPreview, setImagesPreview] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const { prices, areas, categories, province } = useSelector(state => state.app);
+    const { currentData } = useSelector(state => state.user);
 
-    useEffect(() => {
-        if (dataEdit) {
-            let images = JSON.parse(dataEdit?.images?.image)
-            images && setImagesPreview(images)
-        }
-    }, [dataEdit])
     const handleFiles = async (e) => {
-        e.stopPropagation()
-        setIsLoading(true)
-        let images = []
-        let files = e.target.files
-        let formData = new FormData()
+        e.stopPropagation();
+        setIsLoading(true);
+        let images = [];
+        let files = e.target.files;
+        let formData = new FormData();
         for (let i of files) {
-            formData.append('file', i)
-            formData.append('upload_preset', process.env.REACT_APP_UPLOAD_ASSETS_NAME)
-            let response = await apiUploadImages(formData)
-            if (response.status === 200) images = [...images, response.data?.secure_url]
+            formData.append('file', i);
+            formData.append('upload_preset', process.env.REACT_APP_UPLOAD_ASSETS_NAME);
+            let response = await apiUploadImages(formData);
+            if (response.status === 200) images = [...images, response.data?.secure_url];
         }
-        setIsLoading(false)
-        setImagesPreview(prev => [...prev, ...images])
-        setPayload(prev => ({ ...prev, images: [...prev.images, ...images] }))
+        setIsLoading(false);
+        setImagesPreview(prev => [...prev, ...images]);
+        setPayload(prev => new PayloadBuilder().withImages([...prev.images, ...images]).build());
     }
+
     const handleDeleteImage = (image) => {
-        setImagesPreview(prev => prev?.filter(item => item !== image))
-        setPayload(prev => ({
-            ...prev,
-            images: prev.images?.filter(item => item !== image)
-        }))
+        setImagesPreview(prev => prev?.filter(item => item !== image));
+        setPayload(prev => {
+            const newImages = prev.images?.filter(item => item !== image);
+            return new PayloadBuilder().withImages(newImages).build();
+        });
     }
+
     const handleSubmit = async () => {
-        const currentMoney = parseInt(currentData.money,10) || 0;
-        let priceCodeArr = getCodes(+payload.priceNumber / Math.pow(10, 6), prices, 1, 15)
-        let priceCode = priceCodeArr[priceCodeArr.length - 1]?.code
-        let areaCodeArr = getCodesArea(+payload.areaNumber, areas, 0, 90)
-        let areaCode = areaCodeArr[0]?.code
+        let priceCodeArr = getCodes(+payload.priceNumber / Math.pow(10,6), prices, 1, 15);
+        let priceCode = priceCodeArr[priceCodeArr.length - 1]?.code;
+        let areaCodeArr = getCodesArea(+payload.areaNumber, areas, 0, 90);
+        let areaCode = areaCodeArr[0]?.code;
         let finalPayload = {
             ...payload,
             priceCode,
             areaCode,
             userId: currentData.id,
-            priceNumber: +payload.priceNumber / Math.pow(10, 6),
+            priceNumber: +payload.priceNumber / Math.pow(10,6),
             areaNumber: +payload.areaNumber,
             label: `${categories?.find(item => item.code === payload?.categoryCode)?.value} ${payload?.address?.split(',')[0]}`
-        }
-        if (dataEdit) {
-            finalPayload.postId = dataEdit?.id
-            finalPayload.attributesId = dataEdit?.attributesId
-            finalPayload.imagesId = dataEdit?.imagesId
-            finalPayload.overviewId = dataEdit?.overviewId
-
-            if ( currentMoney > 3000){
-                const responseMoney = await apiPlusMoney(currentMoney - 3000);
-                const response = await apiUpdatePost(finalPayload)
-                if (response?.data.err === 0) {
-    
-                    Swal.fire('Thành công', 'Đã cập nhật bài đăng', 'success').then(() => {
-                        resetPayload()
-                        dispatch(resetDataEdit())
-                    })
-                } else {
-                    Swal.fire('Opps!', 'Có lỗi gì đó', 'error')
-                }
-            }
-            else {
-                Swal.fire('Opps!', 'Tài khoản của bạn không đủ để thanh toán', 'error')
-            }
-
-        }
-        else {
-            if ( currentMoney > 3000){
-                const responseMoney = await apiPlusMoney(currentMoney - 3000);
-                const response = await apiCreatePost(finalPayload)
-                if (response?.data.err === 0) {
-                    Swal.fire('Thành công', 'Đã thêm bài đăng mới', 'success').then(() => {
-                        resetPayload()
-                    })
-                } else {
-                    Swal.fire('Opps!', 'Có lỗi gì đó', 'error')
-                }
-            }
-            else{
-                Swal.fire('Opps!', 'Tài khoản của bạn không đủ để thanh toán', 'error')
-            }
-            
+        };
+        const response = await apiCreatePost(finalPayload);
+        if (response?.data.err === 0) {
+            Swal.fire('Thành công', 'Đã thêm bài đăng mới', 'success').then(() => {
+                setPayload(new PayloadBuilder().build());
+            });
+        } else {
+            Swal.fire('Opps!', 'Có lỗi gì đó', 'error');
         }
     }
-    const resetPayload = () => {
-        setPayload({
-            categoryCode: '',
-            title: '',
-            priceNumber: 0,
-            areaNumber: 0,
-            images: '',
-            address: '',
-            priceCode: '',
-            areaCode: '',
-            description: '',
-            province: ''
-        })
-    }
 
+    useEffect(() => {
+        console.log(payload);
+    }, [payload]);
     return (
         <div className='flex flex-col gap-10 bg-white'>
             <div className='flex justify-center'>

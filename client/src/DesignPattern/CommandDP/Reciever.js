@@ -1,7 +1,7 @@
 import { apiUpdateStatus, apiGetPenPosts } from "../../services";
 import { getPenPosts } from "../../store/actions/post";
 import Swal from "sweetalert2";
-import acceptDecorator from "../decoratorDP/AcceptDecorator";
+import acceptDecorator from "../DecoratorDP/AcceptDecorator";
 
 
 export default class Reciever{

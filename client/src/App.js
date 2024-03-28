@@ -11,13 +11,14 @@ import {
 import Favorite from "./DesignPattern/singletonPattern/Favorite"
 import { path } from "./ultils/constant";
 import {
-  CreatePost,
+  
   ManagePost,
   EditAccount,
   System,
   DepositHistory,
   VnPay,
 } from "./containers/system";
+import CreatePost from "./DesignPattern/BuilderPattern/CreatePost";
 import React, {useEffect } from "react";
 import * as actions from "./store/actions";
 import { useDispatch, useSelector } from "react-redux";

@@ -8,9 +8,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { apiGetPenPosts } from "../services";
 import { apiGetPostByDate } from "../services";
-import AcceptCommand from "../DesignPattern/commandDP/AcceptCommand";
-import RejectCommand from "../DesignPattern/commandDP/RejectCommand";
-import getPenPostProxy from "../DesignPattern/proxyDP/getPenPostProxy";
+import AcceptCommand from "../DesignPattern/CommandDP/AcceptCommand";
+import RejectCommand from "../DesignPattern/CommandDP/RejectCommand";
+import getPenPostProxy from "../DesignPattern/ProxyDP/getPenPostProxy";
 export default function PenProduct() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [searchResults, setSearchResults] = useState([]);

@@ -1,5 +1,5 @@
 
-import List from "../compositePattern/List";
+import List from "../CompositePattern/List";
 import Pagination from "../../containers/public/Pagination";
 import { useSearchParams } from "react-router-dom";
 import { useLocation } from 'react-router-dom'

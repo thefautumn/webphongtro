@@ -1,5 +1,5 @@
 import React from 'react'
-import { CreatePost } from '../containers/system'
+import  CreatePost  from '../DesignPattern/BuilderPattern/CreatePost'
 
 
 const UpdatePost = ({ setIsEdit }) => {
